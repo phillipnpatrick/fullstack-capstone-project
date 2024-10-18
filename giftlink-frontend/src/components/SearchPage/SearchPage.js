@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {urlConfig} from '../../config';
+import './SearchPage.css';
 
 function SearchPage() {
 
@@ -41,6 +42,8 @@ function SearchPage() {
             category: document.getElementById('categorySelect').value,
             condition: document.getElementById('conditionSelect').value,
         }).toString();
+
+        console.log(queryParams);
 
         try {
             const response = await fetch(`${baseUrl}${queryParams}`);
@@ -97,43 +100,41 @@ function SearchPage() {
                             />
                         </div>
                     </div>
-                    <div>
-                        {/* Search Input Field */}
-                        <input
-                            type="text"
-                            placeholder="Search gifts..."
-                            value={searchQuery} // Bind the input value to the searchQuery state
-                            onChange={e => setSearchQuery(e.target.value)}
-                            className="search-input" // Optional: Add class for styling
-                        />
-            
-                        {/* Search Button */}
-                        <button onClick={handleSearch} className="btn btn-primary">
-                            Search
-                        </button>
-                    </div>
+                    {/* Search Input Field */}
+                    <input
+                        type="text"
+                        placeholder="Search gifts..."
+                        value={searchQuery} // Bind the input value to the searchQuery state
+                        onChange={e => setSearchQuery(e.target.value)}
+                        className="form-control mb-2 search-input" // Optional: Add class for styling
+                    />
+        
+                    {/* Search Button */}
+                    <button onClick={handleSearch} className="btn btn-primary">
+                        Search
+                    </button>
                     
                     <div className="search-results mt-4">
                         {searchResults.length > 0 ? (
-                        searchResults.map(product => (
-                        <div key={product.id} className="card mb-3">
-                            {/* Check if product has an image and display it */}
-                            <img src={product.image} alt={product.name} className="card-img-top" />
-                            <div className="card-body">
-                                <h5 className="card-title">{product.name}</h5>
-                                <p className="card-text">{product.description.slice(0, 100)}...</p>
-                            </div>
-                            <div className="card-footer">
-                                <button onClick={() => goToDetailsPage(product.id)} className="btn btn-primary">
-                                    View More
-                                </button>
-                            </div>
-                        </div>
-                        ))
+                            searchResults.map(product => (
+                                <div key={product.id} className="card mb-3">
+                                    {/* Check if product has an image and display it */}
+                                    <img src={product.image} alt={product.name} className="card-img-top" />
+                                    <div className="card-body">
+                                        <h5 className="card-title">{product.name}</h5>
+                                        <p className="card-text">{product.description.slice(0, 100)}...</p>
+                                    </div>
+                                    <div className="card-footer">
+                                        <button onClick={() => goToDetailsPage(product.id)} className="btn btn-primary">
+                                            View More
+                                        </button>
+                                    </div>
+                                </div>
+                            ))
                         ) : (
-                        <div className="alert alert-info" role="alert">
-                            No products found. Please revise your filters.
-                        </div>
+                            <div className="alert alert-info" role="alert">
+                                No products found. Please revise your filters.
+                            </div>
                         )}
                     </div>
                 </div>
