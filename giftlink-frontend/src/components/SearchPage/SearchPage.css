@@ -1,26 +1,82 @@
 /* Task 1: Style the search input field */
 .search-input {
-    /* Insert specific CSS properties here */
+    width: 75%;
+    margin-right: 1rem;
 }
 
 /* Task 2: Style the search button */
 .search-button {
-    /* Insert specific CSS properties here */
+    width: 20%;
+    background-color: #007bff;
+    color: #ffffff;
 }
 
 /* Task 3: Customize dropdown filters */
 .dropdown-filter {
-    /* Insert specific CSS properties here */
+    margin-bottom: 1rem;
+    border: 1px solid #ced4da;
 }
 
 /* Task 4: Style the age range slider */
 .age-range-slider {
-    /* Insert specific CSS properties here */
+    width: 100%;
 }
 
 /* Task 5: Enhance search results cards appearance */
 .search-results-card {
-    /* Insert specific CSS properties here */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-/* Additional placeholders for tasks 6 to 10 */
+.alert {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 0.75rem 1.25rem;
+    margin-top: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.card {
+    transition: box-shadow 0.3s ease-in-out;  /* Smooth transition effect for box-shadow */
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Initial subtle shadow */
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+}
+
+.card-img-top {
+    width: 100%;          /* Ensures the image takes the full width of the card */
+    height: 200px;        /* Sets a fixed height for the image */
+    object-fit: cover;    /* Ensures the image covers the area without stretching or squashing */
+    border-radius: 8px 8px 0 0; /* Optional: Adds rounded corners to match the card */
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    /* Adjust grid layout to a single column for better readability */
+    .search-results {
+        grid-template-columns: 1fr; /* Stacks cards vertically */
+    }
+
+    /* Reduce image height for smaller screens */
+    .card-img-top {
+        height: 150px;
+    }
+
+    /* Reduce padding and font sizes */
+    .search-result-card {
+        padding: 15px;
+    }
+
+    .search-result-card h3 {
+        font-size: 18px; /* Smaller font size */
+    }
+
+    .search-result-card p {
+        font-size: 14px; /* Smaller text for descriptions */
+    }
+}

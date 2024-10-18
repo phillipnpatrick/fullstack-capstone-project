@@ -10,6 +10,11 @@ const {loadData} = require("./util/import-mongo/index");
 
 const app = express();
 app.use("*",cors());
+// app.use(cors({
+//     origin: 'https://phillipnpatr-3000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai',  // Your frontend URL
+//     methods: 'GET,POST,PUT,DELETE', // Allowed HTTP methods
+//     credentials: true
+// }));
 const port = 3060;
 
 // Connect to MongoDB; we just do this one time

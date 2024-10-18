@@ -2,6 +2,7 @@
   "name": "giftlink-frontend",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://phillipnpatr-3060.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@testing-library/jest-dom": "^5.17.0",
