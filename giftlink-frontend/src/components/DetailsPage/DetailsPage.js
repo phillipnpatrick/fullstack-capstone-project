@@ -13,7 +13,6 @@ function DetailsPage() {
 	useEffect(() => {
         const authenticationToken = sessionStorage.getItem('auth-token');
         if (!authenticationToken) {
-            const navigate = useNavigate();
             navigate("/app/login");
         }
 
