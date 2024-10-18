@@ -1,36 +1,72 @@
 /* Style for image placeholder */
 .image-placeholder-large {
-    /* Task 1 styling */
-    {{insert code here}}
+    width: 100%;
+    height: 400px;
+    position: relative;
+    background-color: #f0f0f0;
 }
 
 /* Style for product image */
 .product-image-large {
-    /* Task 2 styling */
-    {{insert code here}}
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 /* Style for 'no image available' placeholder */
 .no-image-available-large {
-    /* Task 3 styling */
-    {{insert code here}}
+    display: flex; /* Enables flexbox layout */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+    background-color: #e0e0e0; /* Light gray background color */
+    height: 100%; /* Takes the full height of the parent */
+    font-size: 24px; /* Adjust font size as needed */
+    color: #666; /* Dark gray text color */
+    text-align: center; /* Centers text alignment */
+    border: 1px dashed #ccc; /* Optional: dashed border for better visibility */
 }
 
 /* Style for card header */
 .card-header {
-    /* Task 4 styling */
-    {{insert code here}}
+    background-color: #007bff; /* Example background color (blue) */
+    color: white; /* Sets text color to white for contrast */
+    padding: 15px; /* Adds some padding for spacing */
+    font-size: 1.5rem; /* Adjust font size as needed */
+    text-align: center; /* Centers the text */
+    border-radius: 8px 8px 0 0; /* Optional: rounds the top corners */
 }
 
 /* Style for details title */
 .details-title {
-    /* Task 5 styling */
-    {{insert code here}}
+    font-size: 2rem; /* Set a larger font size for prominence */
+    color: #333; /* Choose a contrasting color for visibility */
+    font-weight: bold; /* Make the title bold */
+    margin: 10px 0; /* Add vertical margin for spacing */
+    text-align: left; /* Align text to the left (optional) */
 }
 
 /* Style for comments section */
 .comments-section {
-    /* Task 6 styling */
-    {{insert code here}}
+    background-color: #f9f9f9; /* Light background color for the comments section */
+    padding: 20px; /* Adds padding around the content */
+    margin-top: 20px; /* Adds space above the comments section */
+    border-radius: 8px; /* Rounds the corners for a smoother appearance */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
 }
 
+.comment {
+    background-color: #ffffff; /* White background for individual comments */
+    padding: 15px; /* Padding inside each comment */
+    margin-bottom: 15px; /* Space between comments */
+    border: 1px solid #ddd; /* Light border for separation */
+    border-radius: 5px; /* Rounds the corners of each comment */
+}
+
+.comment-author {
+    font-weight: bold; /* Makes the author's name bold */
+    margin-bottom: 5px; /* Adds space below the author's name */
+}
+
+.comment-text {
+    color: #555; /* Dark gray text for comment text for readability */
+}
