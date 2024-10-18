@@ -103,17 +103,14 @@ function SearchPage() {
                             type="text"
                             placeholder="Search gifts..."
                             value={searchQuery} // Bind the input value to the searchQuery state
-                            onChange={handleInputChange} // Update searchQuery as the user types
+                            onChange={e => setSearchQuery(e.target.value)}
                             className="search-input" // Optional: Add class for styling
                         />
             
                         {/* Search Button */}
-                        <button onClick={handleSearch} className="search-button">
+                        <button onClick={handleSearch} className="btn btn-primary">
                             Search
                         </button>
-                        
-                        {/* Example: Displaying the current search query */}
-                        <p>Searching for: {searchQuery}</p>
                     </div>
                     
                     <div className="search-results mt-4">
