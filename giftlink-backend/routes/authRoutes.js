@@ -1,3 +1,4 @@
+/*jshint esversion: 8 */
 const express = require('express');
 const app = express();
 const bcryptjs = require('bcryptjs');
@@ -125,7 +126,7 @@ router.put('/update', async (req, res) => {
 
         const authtoken = jwt.sign(payload, JWT_SECRET);
         logger.info('User updated successfully');
-        
+
         res.json({authtoken});
     } catch (e) {
          return res.status(500).send('Internal server error');
