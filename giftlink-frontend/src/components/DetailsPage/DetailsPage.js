@@ -14,6 +14,7 @@ function DetailsPage() {
         const authenticationToken = sessionStorage.getItem('auth-token');
         if (!authenticationToken) {
             navigate("/app/login");
+            return; // Return early if not authenticated
         }
 
         // get the gift to be rendered on the details page
@@ -36,7 +37,7 @@ function DetailsPage() {
 
 		window.scrollTo(0,0);
 
-    }, [productId]);
+    }, [productId, navigate]); // Add `navigate` to the dependency array
 
 
     const handleBackClick = () => {
